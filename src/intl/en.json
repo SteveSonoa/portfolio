@@ -1,0 +1,9 @@
+{
+	"common": {},
+	"components": {
+		"PageHeader": {
+			"viewAllSections": "View All Sections"
+		}
+	},
+	"pages": {}
+}
