@@ -11,3 +11,8 @@ export const Tags = {
     h3: 'h3',
     p: 'p'
 };
+
+export const Styles = {
+    light: 'light',
+    dark: 'dark'
+};

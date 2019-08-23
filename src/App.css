@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.links {
+  transition: 0.5s;
+}
+
+.links.highlight {
+  background: rgba(255,255,0,0.5);
+}
