@@ -8,19 +8,21 @@ export const YouTube = ({ id }) => {
 
     return (
         loadVideo ? (
-            <div className="youtube-container">
-                <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title={id}
-                />
+            <div className="youtube-video-container">
+                <div className="youtube-inner-container">
+                    <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        title={id}
+                    />
+                </div>
             </div>
         ) : (
             <div className="youtube-image-container">
                 <img
-                    src={`http://img.youtube.com/vi/${id}/sddefault.jpg`}
+                    src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`}
                     alt="YouTube Video"
                     className="youtube-image"
                 />

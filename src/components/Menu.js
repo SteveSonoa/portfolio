@@ -1,15 +1,23 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-export const Menu = ({ menu }) => (
-	<div className={`menu ${menu ? 'active' : ''}`}>
-		Hi!
+import { disableMenu, enableMenu } from '../reducers/menuReducer';
+
+export const Menu = ({ disableMenu, enableMenu, menu }) => (
+	<div className={`menu ${menu ? 'active' : ''}`} onClick={menu ? disableMenu : enableMenu}>
+		{menu ? (<div style={{ padding: '10px', backgroundColor: 'red', width: '45px', borderRadius: '50%' }}>-</div>) : (<div style={{ padding: '10px', backgroundColor: 'green', width: '45px', borderRadius: '50%' }}>+</div>)}
 	</div>
 );
 
-// const mapStateToProps = ({ menu = true }) => ({
-//     menu
-// });
+Menu.propTypes = {
+	disableMenu: PropTypes.func.isRequired,
+	enableMenu: PropTypes.func.isRequired,
+	menu: PropTypes.bool.isRequired
+};
 
-// export default connect(mapStateToProps, {})(Menu);
-export default Menu;
+const mapStateToProps = ({ menu }) => ({
+    menu
+});
+
+export default connect(mapStateToProps, { disableMenu, enableMenu })(Menu);

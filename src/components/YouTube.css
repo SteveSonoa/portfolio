@@ -6,8 +6,6 @@
 	position: relative;
 	z-index: 1;
 	opacity: 0.5;
-	min-height: 360px;
-	min-width: 640px;
 }
 
 .youtube-image-container .youtube-cover-image {
@@ -21,7 +19,12 @@
 	cursor: pointer;
 }
 
-.youtube-container {
+.youtube-video-container {
+	width: 100%;
+	position: relative;
+}
+
+.youtube-inner-container {
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
@@ -29,9 +32,10 @@
     margin-bottom: 15px;
 }
 
-.youtube-container iframe,
-.youtube-container object,
-.youtube-container embed {
+.youtube-inner-container iframe,
+.youtube-inner-container object,
+.youtube-inner-container embed,
+.youtube-inner-container document {
     position: absolute;
     top: 0;
     left: 0;

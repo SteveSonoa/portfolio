@@ -5,7 +5,7 @@ import {
 //   Button,
   Image,
 	LinkRenderer,
-	// Menu,
+	Menu,
 //   Modal,
   PageHeader,
   Text,
@@ -24,7 +24,7 @@ function App() {
 				title="Steve's Portfolio"
 			/>
 			<Image src={logo} className="App-logo" alt="logo" />
-			{/* <Menu /> */}
+			<Menu />
 			<Text tag='p'>
 				Edit <code>src/App.js</code> and save to reload.
 			</Text>
