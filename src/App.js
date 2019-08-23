@@ -4,10 +4,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import {
 //   Button,
   Image,
-  LinkRenderer,
+	LinkRenderer,
+	// Menu,
 //   Modal,
   PageHeader,
-  Text
+  Text,
+  YouTube
 } from './components';
 import logo from './logo.svg';
 import './App.css';
@@ -19,19 +21,21 @@ function App() {
 		<div className="App">
 		<header className="App-header">
 			<PageHeader
-			title="Steve's Portfolio"
+				title="Steve's Portfolio"
 			/>
 			<Image src={logo} className="App-logo" alt="logo" />
+			{/* <Menu /> */}
 			<Text tag='p'>
-			Edit <code>src/App.js</code> and save to reload.
+				Edit <code>src/App.js</code> and save to reload.
 			</Text>
 			<LinkRenderer
-			className="App-link"
-			to="https://reactjs.org"
+				className="App-link"
+				to="https://reactjs.org"
 			>
-			Learn React
+				Learn React
 			</LinkRenderer>
 			<LinkRenderer to="/dude">Dude</LinkRenderer>
+			<YouTube id='1QhZW1nwOow' />
 		</header>
 		</div>
     </Router>

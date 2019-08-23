@@ -1,0 +1,40 @@
+.youtube-image-container {
+	position: relative;
+}
+
+.youtube-image-container .youtube-image {
+	position: relative;
+	z-index: 1;
+	opacity: 0.5;
+	min-height: 360px;
+	min-width: 640px;
+}
+
+.youtube-image-container .youtube-cover-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.youtube-container {
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+	max-width: 100%;
+    margin-bottom: 15px;
+}
+
+.youtube-container iframe,
+.youtube-container object,
+.youtube-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
