@@ -23,7 +23,6 @@ function App() {
 			<PageHeader
 				title="Steve's Portfolio"
 			/>
-			<Image src={logo} className="App-logo" alt="logo" />
 			<Menu />
 			<Text tag='p'>
 				Edit <code>src/App.js</code> and save to reload.
@@ -36,6 +35,7 @@ function App() {
 			</LinkRenderer>
 			<LinkRenderer to="/dude">Dude</LinkRenderer>
 			<YouTube id='1QhZW1nwOow' />
+			<Image src={logo} className="App-logo" alt="logo" />
 		</header>
 		</div>
     </Router>
