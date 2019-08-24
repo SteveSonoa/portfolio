@@ -15,7 +15,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #319abb;
 }
 
 @keyframes App-logo-spin {
@@ -32,7 +32,7 @@
  */
 *,
 body {
-	font-size: calc(6px + 2vmin);
+	font-size: 18px;
 	margin: 0;
 	padding: 0;
 }
@@ -60,23 +60,108 @@ h3 {
   font-size: 1.3em;
 }
 
+a,
+a:visited {
+	color: #319abb;
+	text-decoration: none;
+	background: rgba(255,255,255,0.75);
+	margin-right: 5px;
+	padding: 0 5px;
+	transition: 0.25s;
+}
+
+a.external-link {
+	position: relative;
+	margin-right: 30px;
+}
+
+a.external-link::after {
+	position: absolute;
+	right: -25px;
+	top: 50%;
+	transform: translateY(-50%);
+	content: 'e';
+	background: #fff;
+	border: 1px solid black;
+	border-radius: 50%;
+	font-weight: 900;
+	padding: 5px;
+	height: 15px;
+	width: 15px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+a:hover {
+	background: #fff;
+}
+
+a.no-style {
+	color: inherit;
+	text-decoration: none;
+	background: transparent;
+	margin-right: inherit;
+	padding: inherit;	
+}
+
+a.no-style:hover {
+	background: transparent;
+}
+
 /**
  *	LAYOUT
  */
 .app {
-	padding: 0 200px;
-	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
-	background: #666666;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
 }
 
 .side-padding-small {
 	padding-left: 5px;
 	padding-right: 5px;
+}
+
+.page-content-background {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: #1fc8db;
+	background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+
+.page-content {
+	position: relative;
+	padding: 0 200px;
+	width: 100vw;
+	height: 100vh;
+	overflow-y: scroll;
+	transform: translate(0, 0);
+	display: flex;
+	flex-direction: column;
+}
+
+.page-content .footer {
+	flex: 1;
+	min-height: 80px;
+}
+
+.context-container.footer,
+.context-container .footer {
+	height: 100%;
+	text-align: center;
+}
+
+.no-margin {
+	margin: 0;
 }
 
 /**
@@ -87,12 +172,12 @@ h3 {
 }
 
 .light {
-	background: #fafafa;
+	background: rgba(255,255,255,0.5);
 	color: #3a3a3a;
 }
 
 .dark {
-	background: #1f1f1f;
+	background: rgba(0,0,0,0.5);
 	color: #f1f1f1;
 }
 
@@ -102,14 +187,14 @@ h3 {
 .pointer {
 	cursor: pointer;
 }
-	
+
 /* CONTEXT */	
 .context-content {
 	transition: 0.5s;
 }
 
 .context-content.highlight {
-	background: rgba(255,255,0,0.5);
+	background: rgba(255,255,0,0.9);
 }
 
 .context-controller {
@@ -128,9 +213,17 @@ h3 {
 	top: 0;
 	left: 0;
 	transform: translateX(-100%);
-	background: red;
+	background: #ff0000;
 	width: auto;
 	padding: 5px;
+	transition: 0.25s;
+	text-align: center;
+	color: #3a3a3a;
+}
+
+.context-controller-toggle:hover {
+	background: #ff6666;
+	color: #fff;
 }
 	
 /* COMPONENTS */
@@ -174,14 +267,27 @@ h3 {
 }
 
 /**
+ *
+ */
+
+/**
  *	Menu
  */
 .menu {
 	position: fixed;
+	height: 100vh;
+	width: 0;
 	left: 0;
 	top: 0;
 	z-index: 10;
 	margin: 0;
+	background: rgba(0,0,0,0);
+	transition: background 0.5s;
+}
+
+.menu.active {
+	background: rgba(0,0,0,0.5);
+	width: 100vw;
 }
 
 .menu .menu-icon {
@@ -189,23 +295,56 @@ h3 {
 	position: absolute;
 	top: 0;
 	left: 0;
+	transform: translateX(0);
 	z-index: 15;
+	padding: 10px;
+	background-color: #008000;
+	width: 50px;
+	height: 50px;
+	border-radius: 0 10px 10px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu .menu-icon:hover {
+	background-color: #33a033;
+	color: #fff;
+}
+
+.menu.active .menu-icon {
+	background-color: #ff0000;
+	transform: translateX(75vw);
+	box-shadow: 5px 10px 5px rgba(0,0,0,0.5);
+}
+
+.menu.active .menu-icon:hover {
+	background-color: #ff6666;
 }
 
 .menu .menu-content {
 	overflow: hidden;
 	position: absolute;
-	left: -100vw;
+	left: 0;
 	top: 0;
-	transition: 0.5s;
 	margin: 0;
 	height: 100vh;
-	width: 100vw;
+	width: 75vw;
 	z-index: 10;
+	transform: translateX(-100%);
+	background: white;
 }
 
 .menu.active .menu-content {
-	left: 0;
+	transform: translateX(0);
+	box-shadow: 5px 0 5px rgba(0,0,0,0.5);
+}
+
+.menu .menu-content,
+.page-content-background,
+.page-content,
+.menu .menu-icon {
+	transition: 0.5s;
 }
 
 /**

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const LinkRenderer = ({ children, className, to }) => {
-    if (to.includes('http') && to.includes('://')) {
+    if (to.includes('http://') || to.includes('https://') || to.includes('.pdf')) {
         return (
             <a href={to} target="_blank" rel="noopener noreferrer" className={`external-link ${className}`}>
                 {children}
@@ -24,4 +24,4 @@ LinkRenderer.defaultProps = {
     className: ''
 };
 
-export default LinkRenderer;
+export default withRouter(LinkRenderer);

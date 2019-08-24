@@ -63,16 +63,16 @@ const HighlightContext = () => {
     )
 }
 
-const StyleProvider = ({ children, className }) => {
+const StyleProvider = ({ children, className, footer }) => {
     const [state, dispatch] = useReducer(styleReducer, { style: Styles.light, showHighlight: false, showToggle: false })
     return (
         <StyleStateContext.Provider value={state}>
             <StyleDispatchContext.Provider value={dispatch}>
-                <div className="context-container">
+                <div className={`context-container ${footer && 'footer'}`}>
                     <div className={`context-content ${className} ${state.style} ${state.showHighlight ? 'highlight' : ''}`} style={{padding: '10px 20px'}}>
                         {children}
                     </div>
-                    <div className="context-controller-toggle" onClick={() => dispatch({ type: 'toggle-controller' })}>{state.showController ? 'Hide' : 'Show'}<br />Context</div>
+                    <div className="context-controller-toggle pointer" onClick={() => dispatch({ type: 'toggle-controller' })}>{state.showController ? 'Hide' : 'Show'}<br />Context</div>
                     {state.showController && (
                         <div className="context-controller side-padding-small">
                             <DisplayStyle />
@@ -88,7 +88,12 @@ const StyleProvider = ({ children, className }) => {
 
 StyleProvider.propTypes = {
     children: PropTypes.any.isRequired,
-    className: PropTypes.string.isRequired
+    className: PropTypes.string.isRequired,
+    footer: PropTypes.bool
+};
+
+StyleProvider.defaultProps = {
+    footer: false
 };
 
 export const useStyleState = () => {

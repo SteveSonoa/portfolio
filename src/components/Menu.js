@@ -6,9 +6,9 @@ import { disableMenu, enableMenu } from '../reducers/menuReducer';
 import { Text } from './';
 
 export const Menu = ({ disableMenu, enableMenu, menu }) => (
-	<div className={`menu no-margin ${menu ? 'active' : ''}`} onClick={menu ? disableMenu : enableMenu}>
-		{menu ? (<div className="pointer menu-icon" style={{ padding: '10px', backgroundColor: 'red', width: '45px', borderRadius: '50%' }}>-</div>) : (<div className="pointer menu-icon" style={{ padding: '10px', backgroundColor: 'green', width: '45px', borderRadius: '50%' }}>+</div>)}
-		<div className="menu-content light">
+	<div className={`menu no-margin ${menu ? 'active' : ''}`}>
+		<div className={'pointer menu-icon'} onClick={menu ? disableMenu : enableMenu}>{menu ? '-' : '+'}</div>
+		<div className="menu-content">
 			<Text tag='h2'>FullStackSteve.com</Text>
 			<Text tag='h3'>Steve Marshall * Web Developer</Text>
 			<ul>

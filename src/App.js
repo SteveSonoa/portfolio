@@ -1,53 +1,48 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import {
-//   Button,
-  Image,
+	// Button,
+	// Image,
 	LinkRenderer,
 	Menu,
-//   Modal,
-  PageHeader,
-  Text,
-  YouTube
+	// Modal,
+	// PageHeader,
+	Text,
+	// YouTube
 } from './components';
 import StyleProvider from './hooks/styleContext';
-import logo from './logo.svg';
+import Home from './pages/Home';
+import NoMatch from './pages/NoMatch';
 import './App.css';
 
-
-
-function App() {
-	return (
-		<Router>
-			<div className="app no-margin">
-					<Menu />
-					<StyleProvider className="header">
-						<PageHeader
-							title="Steve's Portfolio"
-						/>
-					</StyleProvider>
-					<StyleProvider className="text">
-						<Text tag='p'>
-							Edit <code>src/App.js</code> and save to reload.
-						</Text>
-					</StyleProvider>
-					<StyleProvider className="links">
-						<LinkRenderer
-							className="App-link"
-							to="https://reactjs.org"
-						>
-							<Text tag='p'>Learn React</Text>
-						</LinkRenderer>
-						<LinkRenderer to="/dude">Dude</LinkRenderer>
-					</StyleProvider>
-					<StyleProvider className="media">
-						<YouTube id='1QhZW1nwOow' />
-						<Image src={logo} className="App-logo" alt="logo" title="Cool" text="This is super cool!" />
-					</StyleProvider>
+const App = () => (
+	<Router>
+		<div className="app no-margin">
+			<Menu />
+			<div className={`page-content-background`}>
+				<div className="stripe" />
 			</div>
-		</Router>
-	);
-}
+			<div className={`page-content`}>
+				<StyleProvider className="header">
+					<Text tag='h1'>Steve's Portfolio</Text>
+				</StyleProvider>
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/games" component={Home} />
+					<Route exact path="/layout" component={Home} />
+					<Route exact path="/projects" component={Home} />
+					<Route exact path="/testing" component={Home} />
+					<Route component={NoMatch} />
+				</Switch>
+				<div className="footer">
+					<StyleProvider footer className="footer">
+						<LinkRenderer to='https://github.com/SteveSonoa/portfolio'>View this project on GitHub</LinkRenderer>
+					</StyleProvider>
+				</div>
+			</div>
+		</div>
+	</Router>
+);
 
 export default App;
