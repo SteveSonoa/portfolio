@@ -228,33 +228,20 @@ a:visited {
 	margin-right: 5px;
 	padding: 0 5px;
 	transition: 0.25s;
-}
-
-a.external-link {
-	position: relative;
-	margin-right: 30px;
+	border-radius: 3px;
 }
 
 a.external-link::after {
-	position: absolute;
-	right: -25px;
-	top: 50%;
-	transform: translateY(-50%);
-	content: 'e';
-	background: #fff;
-	border: 1px solid black;
-	border-radius: 50%;
-	font-weight: 900;
-	padding: 5px;
-	height: 15px;
-	width: 15px;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
+    font-style: normal;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f35d";
+	padding-left: 10px;
 }
 
 a:hover {
 	background: #fff;
+	color: #61caeb
 }
 
 a.no-style {
