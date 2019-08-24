@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import './YouTube.css';
+// import './YouTube.css';
 
 export const YouTube = ({ id }) => {
     const [loadVideo, setLoadVideo] = useState(false);

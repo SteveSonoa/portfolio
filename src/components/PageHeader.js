@@ -9,6 +9,7 @@ import { formatMessage } from '../intl';
 export const PageHeader = ({ location, title }) => (
     <div className="page-header">
         {location.pathname !== '/' && (<LinkRenderer to='/'>{formatMessage('components.PageHeader.viewAllSections', 'English')}</LinkRenderer>)}
+        
         <Text tag={Tags.h2}>{title}</Text>
     </div>
 );
