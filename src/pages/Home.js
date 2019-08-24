@@ -26,9 +26,7 @@ export const Home = () => (
         <StyleProvider className="text">
             <Text tag='p'>
                 Edit <code>src/App.js</code> and save to reload.
-                        </Text>
-        </StyleProvider>
-        <StyleProvider className="links">
+            </Text>
             <LinkRenderer className="App-link" to="https://reactjs.org">Learn React</LinkRenderer>
             <LinkRenderer to="/dude"> Dude</LinkRenderer>
             <LinkRenderer to="/resume.pdf"> File</LinkRenderer>

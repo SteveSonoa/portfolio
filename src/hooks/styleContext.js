@@ -43,8 +43,14 @@ const UpdateStyles = () => {
     const dispatch = useStyleDispatch();
     return (
         <>
-            <button onClick={() => dispatch({ type: Styles.dark })}>Dark</button>
-            <button onClick={() => dispatch({ type: Styles.light })}>Light</button>
+            <button onClick={() => {
+                dispatch({ type: Styles.dark });
+                dispatch({ type: 'toggle-controller'})
+            }}>Dark</button>
+            <button onClick={() => {
+                dispatch({ type: Styles.light })
+                dispatch({ type: 'toggle-controller' })
+            }}>Light</button>
         </>
     );
 }
