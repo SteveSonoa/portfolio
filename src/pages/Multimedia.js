@@ -3,14 +3,13 @@ import React from 'react';
 import StyleProvider from '../hooks/styleContext';
 import { PageHeader, Text } from '../components';
 
-export const Layout = () => (
+export const Multimedia = () => (
     <StyleProvider className="header">
         <PageHeader
-            title="Layout"
-            slug="layout"
+            title="Multimedia"
+            slug="multimedia"
         />
-        <Text tag='h3'>Tic-Tac-Toe</Text>
     </StyleProvider>
 );
 
-export default Layout;
+export default Multimedia;

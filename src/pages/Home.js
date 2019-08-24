@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 
 import StyleProvider from '../hooks/styleContext';
 import Games from './Games';
-import Layout from './Layout';
+import Multimedia from './Multimedia';
 import Projects from './Projects';
 import Testing from './Testing';
 import { Image, LinkRenderer, Text, YouTube } from '../components';
@@ -14,8 +14,8 @@ export const Home = () => (
         <Route exact path="/" component={Games} />
         <Route exact path="/games" component={Games} />
 
-        <Route exact path="/" component={Layout} />
-        <Route exact path="/layout" component={Layout} />
+        <Route exact path="/" component={Multimedia} />
+        <Route exact path="/multimedia" component={Multimedia} />
 
         <Route exact path="/" component={Projects} />
         <Route exact path="/projects" component={Projects} />

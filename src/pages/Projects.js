@@ -9,7 +9,6 @@ export const Projects = () => (
             title="Projects"
             slug="projects"
         />
-        <Text tag='h3'>Tic-Tac-Toe</Text>
     </StyleProvider>
 );
 

@@ -7,7 +7,7 @@ import { Text } from './';
 
 export const Menu = ({ disableMenu, enableMenu, menu }) => (
 	<div className={`menu no-margin ${menu ? 'active' : ''}`}>
-		<div className={'pointer menu-icon'} onClick={menu ? disableMenu : enableMenu}>{menu ? '-' : '+'}</div>
+		<div className={'pointer menu-icon'} onClick={menu ? disableMenu : enableMenu}>{menu ? <i className="fas fa-times" /> : <i className="fas fa-bars" />}</div>
 		<div className="menu-content">
 			<Text tag='h2'>FullStackSteve.com</Text>
 			<Text tag='h3'>Steve Marshall * Web Developer</Text>
