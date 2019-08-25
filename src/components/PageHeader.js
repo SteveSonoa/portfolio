@@ -26,7 +26,7 @@ export const PageHeader = ({ location, slug, title }) => (
 
 PageHeader.propTypes = {
     location: PropTypes.object.isRequired,
-    title: PropTypes.oneOf([Object.values(PageTitles)]).isRequired
+    title: PropTypes.oneOf(Object.values(PageTitles)).isRequired
 };
 
 export default withRouter(PageHeader);

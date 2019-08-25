@@ -1,8 +1,8 @@
 export const PageTitles = {
     games: 'Games',
-    layout: 'CSS Layout',
+    multimedia: 'Multimedia',
     projects: 'Projects',
-    testing: 'Testing Frameworks'
+    testing: 'Testing'
 };
 
 export const Tags = {

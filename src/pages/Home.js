@@ -32,7 +32,6 @@ export const Home = () => (
             <LinkRenderer to="/resume.pdf"> File</LinkRenderer>
         </StyleProvider>
         <StyleProvider className="media">
-            <YouTube id='1QhZW1nwOow' />
             <Image src={logo} className="App-logo" alt="logo" title="Cool" text="This is super cool!" />
         </StyleProvider>
     </>

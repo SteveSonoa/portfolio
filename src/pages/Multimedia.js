@@ -1,7 +1,7 @@
 import React from 'react';
 
 import StyleProvider from '../hooks/styleContext';
-import { PageHeader, Text } from '../components';
+import { PageHeader, Text, YouTube } from '../components';
 
 export const Multimedia = () => (
     <StyleProvider className="header">
@@ -9,6 +9,8 @@ export const Multimedia = () => (
             title="Multimedia"
             slug="multimedia"
         />
+        <YouTube id='1QhZW1nwOow' />
+
     </StyleProvider>
 );
 

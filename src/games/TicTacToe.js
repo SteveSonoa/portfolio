@@ -111,6 +111,7 @@ export class TicTacToe extends Component {
                 className="cell"
                 onClick={this.createOnClickHandler(index)}
                 data-player={board[index]}
+                key={index}
             >
                 <div className={`player-marker ${winningCells.includes(index) ? 'winner' : ''}`}>{board[index] === Player.One ? <i className="fas fa-times" /> : board[index] === Player.Two ? <i className="far fa-circle" /> : ''}</div>
             </div>

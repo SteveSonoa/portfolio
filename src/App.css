@@ -425,10 +425,42 @@ a.no-style:hover {
 .game-layout {
 	display: flex;
 	flex-flow: row wrap;
+	padding: 10px;
+	border-radius: 5px;
+	border-width: 1px;
+	margin-bottom: 10px;
+}
+
+.game-layout.light {
+	background: rgba(255,255,255,1);
+}
+
+.game-layout.dark {
+	background: rgba(0,0,0,1);
 }
 
 .game-layout .game-header {
 	flex: 0 0 100%;
+	transition: 0.5s;
+}
+
+.game-layout .game-header:hover {
+	color: #1fc8db;
+}
+
+.game-layout .game-header i {
+	margin: 10px 10px 0;
+}
+
+.game-layout .game-example,
+.game-layout .game-description {
+	overflow: hidden;
+	height: 0;
+}
+
+.game-layout.active .game-example,
+.game-layout.active .game-description {
+	height: auto;
 }
 
 .game-layout .game-example {

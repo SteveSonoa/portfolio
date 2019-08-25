@@ -17,6 +17,7 @@
     box-sizing: border-box;
     position: relative;
 	border-style: solid;
+	transition: 0.25s;
 }
 
 .ttt-container .cell:nth-child(2),
