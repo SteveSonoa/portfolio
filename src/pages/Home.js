@@ -6,7 +6,7 @@ import Games from './Games';
 import Multimedia from './Multimedia';
 import Projects from './Projects';
 import Testing from './Testing';
-import { Image, LinkRenderer, Text, YouTube } from '../components';
+import { Image, LinkRenderer, Text } from '../components';
 import logo from '../logo.svg';
 
 export const Home = () => (

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import StyleProvider, { useStyleState } from '../hooks/styleContext';
-import { LinkRenderer, PageHeader, Text } from '../components';
+import { Features, LinkRenderer, PageHeader, Text } from '../components';
+import { AvailableFeatures } from '../lib/constants';
 import TicTacToe from '../games/TicTacToe';
 import GamesFocus from '../games/focus/view/GamesFocus';
 
@@ -10,7 +11,7 @@ const GameLayout = ({ title, Component, description, gitHubLink }) => {
     const { style } = useStyleState()
 
     return (
-        <div className={`game-layout ${active ? 'active' : ''} ${style}`}>
+        <div className={`game-layout small-corners ${active ? 'active' : ''} ${style}`}>
             <div className='game-header pointer' onClick={() => setActive(!active)}>
                 <Text tag='h3'>{active ? <i className="fas fa-angle-double-up" /> : <i className="fas fa-angle-double-down" />} {title}</Text>
             </div>
@@ -26,6 +27,9 @@ const GameLayout = ({ title, Component, description, gitHubLink }) => {
 }
 
 export const Games = () => {
+    const { react, typescript, css, flex, timer, md, adobe } = AvailableFeatures;
+    const features = [react, typescript, css, flex, timer, md, adobe.ps];
+
     const gamesInfo = [
         {
             title: 'TypeScript Tic-Tac-Toe',
@@ -39,7 +43,7 @@ export const Games = () => {
             description: ['Focus was created in React. It uses state management for the timer (among other variables). Most of the effects you will see are powered by CSS, not React, JavaScript, or HTML.'],
             gitHubLink: 'focus'
         }
-    ]
+    ];
 
     return (
         <StyleProvider className="header">
@@ -47,6 +51,7 @@ export const Games = () => {
                 title="Games"
                 slug="games"
             />
+            <Features availableFeatures={features} />
             {gamesInfo.map(game => <GameLayout {...game} key={game.title} />)}
         </StyleProvider>
     );

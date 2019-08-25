@@ -7,7 +7,7 @@ export const Image = ({ alt, className, src, text, title }) => (
     <div className="image-container">
         <img src={src} className={className} alt={alt} />
         {text && (
-            <div className="image-text">
+            <div className="image-text small-corners">
                 {title && <Text tag='h3'>{title}</Text>}
                 <Text tag='p'>{text}</Text>
             </div>

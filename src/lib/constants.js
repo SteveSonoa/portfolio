@@ -16,3 +16,31 @@ export const Styles = {
     light: 'light',
     dark: 'dark'
 };
+
+export const AvailableFeatures = {
+    react: 'React',
+    typescript: 'TypeScript',
+    css: 'CSS',
+    hooks: 'Hooks',
+    context: 'Context',
+    redux: 'Redux',
+    saga: 'Sagas',
+    grid: 'CSS Grid',
+    flex: 'Flexbox',
+    router: 'React Router',
+    timer: 'Timers',
+    md: 'Markdown',
+    adobe: {
+        premiere: 'Adobe Premiere',
+        ps: 'Adobe Photoshop',
+        ae: 'Adobe After Effects',
+        ca: 'Adobe Character Animator',
+        aud: 'Adobe Audition',
+        fuse: 'Adobe Fuse'
+    },
+    api: 'API Calls',
+    express: 'Express',
+    seo: 'SEO Management',
+    security: 'Security Management',
+    mysql: 'MySQL'
+}

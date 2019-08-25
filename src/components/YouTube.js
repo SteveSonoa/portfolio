@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-// import './YouTube.css';
+import { YouTubeImage } from './';
 
-export const YouTube = ({ id }) => {
+export const YouTube = ({ autoplay, id }) => {
     const [loadVideo, setLoadVideo] = useState(false);
+    useEffect(() => setLoadVideo(false), [id]);
 
     return (
         loadVideo ? (
             <div className="youtube-video-container">
                 <div className="youtube-inner-container">
                     <iframe
-                        src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1`}
+                        src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=${autoplay ? '1' : '0'}`}
                         frameBorder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
@@ -20,25 +21,22 @@ export const YouTube = ({ id }) => {
                 </div>
             </div>
         ) : (
-            <div className="youtube-image-container">
-                <img
-                    src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`}
-                    alt="YouTube Video"
-                    className="youtube-image"
-                />
-                <img
-                    src="/img/youtube-video-overlay.jpg"
-                    alt="YouTube Video"
-                    className="youtube-cover-image"
-                    onClick={() => setLoadVideo(true)}
-                />
-            </div>
+            <YouTubeImage
+                handleClickImage={() => setLoadVideo(true)}
+                id={id}
+                overlay={true}
+            />
         )
     );
 };
 
 YouTube.propTypes = {
+    autoplay: PropTypes.bool,
     id: PropTypes.string.isRequired
+};
+
+YouTube.propTypes = {
+    autoplay: false
 };
 
 export default YouTube;

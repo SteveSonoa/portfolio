@@ -60,6 +60,14 @@ h3 {
   font-size: 1.3em;
 }
 
+p.small {
+	font-size: 0.8em;
+}
+
+img {
+	max-width: 100%;
+}
+
 /**
  *	LAYOUT
  */
@@ -141,6 +149,10 @@ h3 {
 	margin: 0;
 }
 
+.small-corners {
+	border-radius: 5px;
+}
+
 /**
  *	COLORS
  */
@@ -215,6 +227,14 @@ h3 {
 /* COMPONENTS */
 
 /**
+ *	Features
+ */
+.features {
+	font-style: italic;
+	color: #666666;
+}
+
+/**
  *	Image
  */
 .image-container {
@@ -239,7 +259,6 @@ h3 {
 	transition: 0.25s;
 	overflow: hidden;
 	padding: 0;
-	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -375,6 +394,80 @@ a.no-style:hover {
 }
 
 /**
+ *	PlayList
+ */
+.playlist,
+.playlist .listitem {
+	display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 50% 50%;
+	justify-items: stretch;
+	align-items: stretch;
+}
+
+.playlist {
+	grid-template-areas: 
+		"list video"
+		"desc video";
+	grid-gap: 15px 10px;
+	padding: 10px 10px 10px 0;
+}
+
+.playlist.light {
+	background: #fff;
+}
+
+.playlist.dark {
+	background: #212121;
+}
+
+.playlist .listings {
+	grid-area: list;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 0 5px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.playlist .description {
+	grid-area: desc;
+	padding-left: 5px;
+}
+
+.playlist .video {
+	grid-area: video
+}
+
+.playlist .listitem {
+	grid-template-areas: 
+		"image txt";
+	grid-column-gap: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.playlist.light .listitem {
+	background: #dddddd;
+}
+
+.playlist.dark .listitem {
+	background: #717171;
+}
+
+.playlist .listitem .image {
+	grid-area: image;
+}
+
+.playlist .listitem .image img {
+	border-radius: 10px;
+}
+
+.playlist .listitem .text {
+  grid-area: txt;
+}
+
+/**
  *	YouTube
  */
 .youtube-image-container {
@@ -426,7 +519,6 @@ a.no-style:hover {
 	display: flex;
 	flex-flow: row wrap;
 	padding: 10px;
-	border-radius: 5px;
 	border-width: 1px;
 	margin-bottom: 10px;
 }
