@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import StyleProvider, { useStyleState } from '../hooks/styleContext';
 import { LinkRenderer, PageHeader, Text } from '../components';
 import TicTacToe from '../games/TicTacToe';
+import GamesFocus from '../games/focus/view/GamesFocus';
 
 const GameLayout = ({ title, Component, description, gitHubLink }) => {
     const [active, setActive] = useState(false);
@@ -17,7 +18,7 @@ const GameLayout = ({ title, Component, description, gitHubLink }) => {
                 <Component />
             </div>
             <div className="game-description">
-                <Text tag='p'>{description}</Text>
+                {description.map((desc, i) => <Text tag='p' key={i}>{desc}</Text>)}                
                 <LinkRenderer to={`https://github.com/SteveSonoa/${gitHubLink}`}>View this project on GitHub</LinkRenderer>
             </div>
         </div>
@@ -29,14 +30,14 @@ export const Games = () => {
         {
             title: 'TypeScript Tic-Tac-Toe',
             Component: TicTacToe,
-            description: 'Tic-Tac-Toe was created in TypeScript and React.',
+            description: ['Tic-Tac-Toe was created in TypeScript and React.'],
             gitHubLink: 'typescript-demo'
         },
         {
-            title: 'TypeScript Tic-Tac-Toe 2',
-            Component: TicTacToe,
-            description: 'Tic-Tac-Toe was created in TypeScript and React.',
-            gitHubLink: 'typescript-demo'
+            title: 'Focus',
+            Component: GamesFocus,
+            description: ['Focus was created in React. It uses state management for the timer (among other variables). Most of the effects you will see are powered by CSS, not React, JavaScript, or HTML.'],
+            gitHubLink: 'focus'
         }
     ]
 

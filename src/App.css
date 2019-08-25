@@ -461,12 +461,9 @@ a.no-style:hover {
 .game-layout.active .game-example,
 .game-layout.active .game-description {
 	height: auto;
-}
-
-.game-layout .game-example {
-	flex: 1 1 25%;
+	flex: 1 1 50%;
 }
 
 .game-layout .game-description {
-	flex: 1 1 75%;
+	padding: 0 10px;
 }

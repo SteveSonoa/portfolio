@@ -1,0 +1,30 @@
+.pagination-for-arrays {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.pagination-for-arrays .page {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.pagination-for-arrays .page::after {
+    font-style: normal;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 100;
+    content: "\f111";
+}
+
+.pagination-for-arrays .active.page::after {
+    font-style: normal;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f192";
+}
+
+.pagination-for-arrays .active.page {
+    /* color: chartreuse; */
+}
