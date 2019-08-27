@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import StyleProvider, { useStyleState } from '../hooks/styleContext';
-import { Features, LinkRenderer, PageHeader, Text } from '../components';
+import { LinkRenderer, PageHeader, Text } from '../components';
 import { AvailableFeatures } from '../lib/constants';
 import TicTacToe from '../games/TicTacToe';
 import GamesFocus from '../games/focus/view/GamesFocus';
@@ -50,8 +50,8 @@ export const Games = () => {
             <PageHeader
                 title="Games"
                 slug="games"
+                features={features}
             />
-            <Features availableFeatures={features} />
             {gamesInfo.map(game => <GameLayout {...game} key={game.title} />)}
         </StyleProvider>
     );

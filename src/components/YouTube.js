@@ -35,7 +35,7 @@ YouTube.propTypes = {
     id: PropTypes.string.isRequired
 };
 
-YouTube.propTypes = {
+YouTube.defaultProps = {
     autoplay: false
 };
 

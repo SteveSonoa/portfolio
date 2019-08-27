@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Text } from './';
+import { useStyleState } from '../hooks/styleContext';
+
 
 export const Features = ({ availableFeatures }) => {
+    const { style } = useStyleState()
+
     let text = '';
     switch(availableFeatures.length) {
         case 1:
@@ -13,11 +17,12 @@ export const Features = ({ availableFeatures }) => {
             text = `${availableFeatures[0]} and ${availableFeatures[0]}`
             break;
         default: 
-            const lastText = `and ${availableFeatures.pop()}`;
-            text = `${availableFeatures.join(', ')}, ${lastText}`;
+            const newArray = [...availableFeatures];
+            const lastText = `and ${newArray.pop()}`;
+            text = `${newArray.join(', ')}, ${lastText}`;
     }
     return (
-        <Text tag='p' className='features small'>This section includes {text}.</Text>
+        <Text tag='p' className={`features small ${style}`}>This section includes {text}.</Text>
     )
 };
 

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import {
 	// Button,
-	// Image,
+	Image,
 	LinkRenderer,
 	Menu,
 	// Modal,
@@ -14,6 +14,7 @@ import {
 import StyleProvider from './hooks/styleContext';
 import Home from './pages/Home';
 import NoMatch from './pages/NoMatch';
+import logo from './logo.svg';
 import './App.css';
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
 		<div className="app no-margin">
 			<Menu />
 			<div className={`page-content-background`}>
+				<Image src={logo} className="App-logo" alt="logo" title="Cool" text="This is super cool!" />
 				<div className="stripe" />
 			</div>
 			<div className={`page-content`}>

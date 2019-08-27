@@ -11,6 +11,14 @@ const ListItem = ({ active, id, onClick, title }) => (
     </div> 
 );
 
+const ItemDescription = ({ description }) => (
+    <>
+        {description.map(desc =>
+            <Text tag='p'>{desc}</Text>
+        )}
+    </>
+);
+
 export const PlayList = ({ options }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const { style } = useStyleState()
@@ -20,7 +28,7 @@ export const PlayList = ({ options }) => {
             <div className='listings'>
                 {options.map((option, i) => <ListItem active={currentIndex === i} id={option.id} onClick={() => setCurrentIndex(i)} title={option.title} key={option.id} />)}
             </div>
-            <div className="description"><Text tag='p'>{options[currentIndex].description}</Text></div>
+            <div className="description"><ItemDescription description={options[currentIndex].description} /></div>
             <div className="video"><YouTube id={options[currentIndex].id} autoplay={true} /></div>
         </div>
     );

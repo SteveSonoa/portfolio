@@ -98,6 +98,21 @@ img {
 	z-index: 1;
 }
 
+.page-content-background .image-container {
+	position: absolute;
+	top: -40%;
+	right: -50%;
+	height: 100%;
+	width: 100%;
+}
+
+.page-content-background .image-container .App-logo {
+	max-width: 90%;
+	max-height: 90%;
+	z-index: -1;
+	opacity: 0.5;
+}
+
 .page-content-background .stripe {
 	position: fixed;
 	left: 0;
@@ -231,7 +246,18 @@ img {
  */
 .features {
 	font-style: italic;
+	background: transparent;
+	transition: 0.5s;
+	margin-top: -5px;
+}
+
+.features.light {
 	color: #666666;
+}
+
+.features.dark {
+	color: #b3b3b3;
+	/* background: transparent; */
 }
 
 /**
@@ -400,7 +426,7 @@ a.no-style:hover {
 .playlist .listitem {
 	display: grid;
   grid-template-columns: 30% 70%;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 50%;
 	justify-items: stretch;
 	align-items: stretch;
 }
@@ -411,32 +437,41 @@ a.no-style:hover {
 		"desc video";
 	grid-gap: 15px 10px;
 	padding: 10px 10px 10px 0;
+	background: transparent;
 }
 
 .playlist.light {
-	background: #fff;
+	/* background: #fff; */
 }
 
 .playlist.dark {
-	background: #212121;
+	/* background: #212121; */
 }
 
 .playlist .listings {
 	grid-area: list;
 	overflow-y: auto;
 	overflow-x: hidden;
-	padding: 0 5px;
-	border-width: 1px;
-	border-style: solid;
+	padding: 5px;
+}
+
+.playlist.light .listings {
+	background: rgba(255,255,255,0.8);
+}
+
+.playlist.dark .listings {
+	background: rgba(0,0,0,0.8);
 }
 
 .playlist .description {
 	grid-area: desc;
 	padding-left: 5px;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .playlist .video {
-	grid-area: video
+	grid-area: video;
 }
 
 .playlist .listitem {
@@ -445,6 +480,10 @@ a.no-style:hover {
 	grid-column-gap: 10px;
 	margin-bottom: 10px;
 	padding: 5px;
+}
+
+.playlist .listings .listitem:nth-last-child(1) {
+	margin-bottom: 0;
 }
 
 .playlist.light .listitem {
@@ -521,6 +560,7 @@ a.no-style:hover {
 	padding: 10px;
 	border-width: 1px;
 	margin-bottom: 10px;
+	transition: 0.5s;
 }
 
 .game-layout.light {

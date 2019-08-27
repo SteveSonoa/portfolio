@@ -21,10 +21,10 @@ export const AvailableFeatures = {
     react: 'React',
     typescript: 'TypeScript',
     css: 'CSS',
-    hooks: 'Hooks',
-    context: 'Context',
+    hooks: 'React Hooks',
+    context: 'React Context',
     redux: 'Redux',
-    saga: 'Sagas',
+    saga: 'Redux Sagas',
     grid: 'CSS Grid',
     flex: 'Flexbox',
     router: 'React Router',
@@ -39,8 +39,12 @@ export const AvailableFeatures = {
         fuse: 'Adobe Fuse'
     },
     api: 'API Calls',
-    express: 'Express',
+    express: 'Express Server',
     seo: 'SEO Management',
     security: 'Security Management',
-    mysql: 'MySQL'
+    mysql: 'MySQL',
+    testing: 'Testing Library (by Kent Dodds)',
+    enzyme: 'Enzyme Testing',
+    jest: 'Jest Testing',
+    mocha: 'Mocha Testing'
 }
