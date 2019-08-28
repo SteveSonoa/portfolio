@@ -1,9 +1,9 @@
 import { all } from 'redux-saga/effects';
 
-// import { menuSagas } from './menuSagas';
+import { giphySagas } from './giphySagas';
 
 export default function* root() {
     yield all([
-        // ...menuSagas,
+        ...giphySagas,
     ]);
 }

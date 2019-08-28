@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
@@ -16,15 +16,6 @@
 
 .App-link {
   color: #319abb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /**
@@ -169,6 +160,45 @@ img {
 }
 
 /**
+ *	ANIMATION
+ */
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/**
+ *	STATUS
+ */
+span.loading i {
+	padding: 0 10px;
+	color: lightsalmon;
+	animation: spin infinite 2s linear;
+}
+
+span.success::after {
+    font-style: normal;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f164";
+	padding-left: 10px;
+	color: green;
+}
+
+span.error::after {
+	font-style: normal;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+	content: "\f071";
+	padding-left: 10px;
+	color: red;
+}
+
+/**
  *	COLORS
  */
 .black-text {
@@ -207,7 +237,7 @@ img {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #6a6a6a;
+	background: #aaaaaa;
 	border: #ffffff solid 3px;
 	border-radius: 10px;
 	width: auto;
@@ -480,6 +510,7 @@ a.no-style:hover {
 	grid-column-gap: 10px;
 	margin-bottom: 10px;
 	padding: 5px;
+	transition: 0.25s;
 }
 
 .playlist .listings .listitem:nth-last-child(1) {
@@ -490,8 +521,32 @@ a.no-style:hover {
 	background: #dddddd;
 }
 
+.playlist.light .listitem:hover {
+	background: #ffffdd;
+}
+
 .playlist.dark .listitem {
 	background: #717171;
+	color: #dfdfdf;
+}
+
+.playlist.dark .listitem:hover {
+	background: #aaaa71;
+	color: #eeeeee;
+}
+
+.playlist .listitem.active {
+	font-weight: 900;
+}
+
+.playlist.light .listitem.active {
+	background: #afafff;
+	color: #ffffff;
+}
+
+.playlist.dark .listitem.active {
+	background: #3333dd;
+	color: #ffffff;
 }
 
 .playlist .listitem .image {
