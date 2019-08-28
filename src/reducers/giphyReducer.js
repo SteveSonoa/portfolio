@@ -12,9 +12,9 @@ export const initialState = {
 };
 
 // Action Creators
-export const fetchGiphyImages = (searchTerms) => ({
+export const fetchGiphyImages = (arr) => ({
     type: FETCH_GIPHY_IMAGES,
-    searchTerms
+    searchTerms: arr.map(item => item.value).join(' ')
 });
 
 // Reducers

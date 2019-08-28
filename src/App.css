@@ -272,6 +272,46 @@ span.error::after {
 /* COMPONENTS */
 
 /**
+ *	DropdownContainer
+ */
+.ddwtContainer {
+	max-width: 90%;
+	position: relative;
+}
+
+.ddwtContainer .ddwtButton {
+	padding: 10px;
+	border: 1px solid transparent;
+	font-size: .8em;
+	color: #666666;
+	background-color: #ffffff;
+	position: relative;
+	/* left: -25px; */
+}
+
+.ddwtContainer .ddwtButton:hover {
+	border: 1px solid #c0c0c0;
+}
+
+.ddwtContainer .ddwtButton:focus {
+	outline: none;
+}
+
+.ddwtContainer .ddwtButton i.arrow {
+    border: solid #666666;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+	padding: 3px;
+	margin-left: 8px;
+    transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	position: relative;
+	top: -3px;
+	transition: 0.25s;
+}
+
+
+/**
  *	Features
  */
 .features {
@@ -447,6 +487,58 @@ a.no-style:hover {
 .page-content,
 .menu .menu-icon {
 	transition: 0.5s;
+}
+
+/**
+ *	OptionPanel
+ */
+.op-container {
+	background-color: #ffffff;
+	border: 1px solid #ffffff;
+    padding: 5px 0 0;
+    margin: 0 auto;
+    color: #666666;
+    font-size: .8em;
+	box-shadow: 1px 2px 10px #0000001f;
+	position: relative;
+	top: -1px;
+}
+
+ul.op-ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+
+li.op-li {
+	margin: 5px 0;
+	padding: 5px;
+	border-radius: 2px;
+}
+
+li.op-li:hover {
+	background-color: cornflowerblue;
+	color: #ffffff;
+}
+
+li.op-li.checked {
+	font-weight: bolder;
+}
+
+li.op-li.checked i.fas {
+	color:greenyellow;
+}
+
+input.op-input {
+	padding: 5px;
+	width: 80%;
+	margin: 5px;
+	margin-bottom: '5px';
+	font-family: inherit;
+	color: inherit;
+	border-radius: 3px;
+	border-width: 1px;
 }
 
 /**

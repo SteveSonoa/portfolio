@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { disableMenu, enableMenu } from '../reducers/menuReducer';
 import { fetchGiphyImages } from '../reducers/giphyReducer';
-import { Text } from './';
+import { DropdownContainer, Text } from './';
 
 export const Menu = ({ disableMenu, enableMenu, menu, giphy, fetchGiphyImages }) => (
 	<div className={`menu no-margin ${menu ? 'active' : ''}`}>
@@ -20,6 +20,16 @@ export const Menu = ({ disableMenu, enableMenu, menu, giphy, fetchGiphyImages })
 				<li>Resume (PDF)</li>
 			</ul>
 			<button onClick={() => fetchGiphyImages('superman')}>Get Giphy Images</button> {giphy.loading ? <span className='loading'><i class="fas fa-sync-alt fa-spin" /></span> : giphy.success ? <span className='success' /> : giphy.error ? <span className='error' /> : null}
+			<DropdownContainer
+				title='THIS IS THE TITLE'
+				options={[
+					{ name: 'Cats', value: 'cat kitten lion' },
+					{ name: 'Marvel', value: 'marvel mcu ironman hulk' },
+					{ name: 'Star Wars', value: 'starwars yoda darth kenobi xwing' },
+					{ name: 'Disney', value: 'disney disneyland mickey pluto donald' }
+				]}
+				action={fetchGiphyImages}
+			/>
 		</div>
 	</div>
 );
