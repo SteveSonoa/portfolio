@@ -315,10 +315,15 @@ span.error::after {
  *	Features
  */
 .features {
-	font-style: italic;
+	/* font-style: italic; */
 	background: transparent;
 	transition: 0.5s;
 	margin-top: -5px;
+	font-family: 'Julius Sans One', sans-serif;
+	/* font-family: 'Darker Grotesque', sans-serif; */
+	/* font-family: 'Open Sans Condensed', sans-serif; */
+	font-size: 1.2em;
+
 }
 
 .features.light {
@@ -549,6 +554,22 @@ input.op-input {
 /**
  *	PlayList
  */
+.page-header {
+	margin: 50px 0;
+	text-align: center;
+}
+
+.page-header .section-title {
+	font-size: 4em;
+	font-family: 'Gruppo', cursive;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+	margin-right: -0.5em;
+}
+
+/**
+ *	PlayList
+ */
 .playlist,
 .playlist .listitem {
 	display: grid;
@@ -565,14 +586,6 @@ input.op-input {
 	grid-gap: 15px 10px;
 	padding: 10px 10px 10px 0;
 	background: transparent;
-}
-
-.playlist.light {
-	/* background: #fff; */
-}
-
-.playlist.dark {
-	/* background: #212121; */
 }
 
 .playlist .listings {
