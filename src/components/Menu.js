@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 
 import { disableMenu, enableMenu } from '../reducers/menuReducer';
 import { fetchGiphyImages } from '../reducers/giphyReducer';
-import { DropdownContainer, Text } from './';
+import { DropdownContainer, SocialMediaButton, Text } from './';
 
 export const Menu = ({ disableMenu, enableMenu, menu, giphy, fetchGiphyImages }) => (
 	<div className={`menu no-margin ${menu ? 'active' : ''}`}>
 		<div className={'pointer menu-icon'} onClick={menu ? disableMenu : enableMenu}>{menu ? <i className="fas fa-times" /> : <i className="fas fa-bars" />}</div>
 		<div className="menu-content">
 			<Text tag='h2'>FullStackSteve.com</Text>
-			<Text tag='h3'>Steve Marshall * Web Developer</Text>
+			<Text tag='h3' className="name">Steve Marshall <i className="fas fa-code-branch" /> Web Developer</Text>
 			<ul>
 				<li>CSS Layouts</li>
 				<li>Testing Frameworks</li>
@@ -30,6 +30,7 @@ export const Menu = ({ disableMenu, enableMenu, menu, giphy, fetchGiphyImages })
 				]}
 				action={fetchGiphyImages}
 			/>
+			<SocialMediaButton site='github' />
 		</div>
 	</div>
 );

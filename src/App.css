@@ -482,6 +482,11 @@ a.no-style:hover {
 	box-shadow: 5px 0 5px rgba(0,0,0,0.5);
 }
 
+.menu .menu-content .name i.fas {
+	margin: 0 10px;
+	font-size: 0.8em;
+}
+
 .menu .menu-content,
 .page-content-background,
 .page-content,
@@ -651,6 +656,50 @@ input.op-input {
 
 .playlist .listitem .text {
   grid-area: txt;
+}
+
+/**
+ *	SocialMediaButton
+ */
+.social-media-button {
+	width: auto;
+	float: left;
+	display: flex;
+	padding: 10px 20px;
+}
+
+.social-media-button button.icon-button {
+	position: relative;
+}
+
+.social-media-button .fab {
+	padding: 5px;
+	border-radius: 50%;
+	transition: 0.5s;
+	transition-delay: 0.25s;
+}
+
+.social-media-button .fab,
+.social-media-button .name {
+	background: #aaaaaa;
+}
+
+.social-media-button.show-name .fab {
+	border-radius: 50% 0 0 50%;
+	transition: 0s;
+	transition-delay: 0s;
+}
+
+.social-media-button .name {
+	overflow: hidden;
+	width: 0;
+	border-radius: 0 50% 50% 0;
+	transition: 0.5s;
+}
+
+.social-media-button.show-name .name {
+	width: 100%;
+	transition: 0.5s;
 }
 
 /**

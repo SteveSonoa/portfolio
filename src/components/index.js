@@ -8,6 +8,7 @@ import Modal from './Modal';
 import OptionPanel from './OptionPanel';
 import PageHeader from './PageHeader';
 import PlayList from './PlayList';
+import SocialMediaButton from './SocialMediaButton';
 import Text from './Text';
 import YouTube from './YouTube';
 import YouTubeImage from './YouTubeImage';
@@ -23,6 +24,7 @@ export {
     OptionPanel,
     PageHeader,
     PlayList,
+    SocialMediaButton,
     Text,
     YouTube,
     YouTubeImage
