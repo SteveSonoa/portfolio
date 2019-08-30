@@ -10,7 +10,7 @@ export const PageHeader = ({ features, location, slug, title }) => (
     <div className="page-header">
 		{location.pathname === '/' ? (
 			<>
-				<LinkRenderer to={slug} className="no-style"><Text tag={Tags.h2}>{title}</Text></LinkRenderer>
+				<LinkRenderer to={slug} className="no-style"><Text tag={Tags.h2} className='section-title'>{title}</Text></LinkRenderer>
 				<Features availableFeatures={features} />
 			</>
 		) : (

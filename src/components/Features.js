@@ -22,7 +22,7 @@ export const Features = ({ availableFeatures }) => {
             text = `${newArray.join(', ')}, ${lastText}`;
     }
     return (
-        <Text tag='p' className={`features small ${style}`}>This section includes {text}.</Text>
+        <Text tag='p' className={`features ${style}`}>This section includes {text}.</Text>
     )
 };
 
