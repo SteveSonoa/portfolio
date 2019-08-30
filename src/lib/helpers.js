@@ -61,26 +61,26 @@ export const projects = [
             },
             {
                 text: 'Implement JWT authentication',
-                tech: ['JWT', 'Base64 Encryption', 'Redux', 'Redux-Sagas', 'Bootstrap Grid Layout']
+                tech: ['JWT', 'Base64 Encryption', 'React Hooks', 'Redux', 'Redux-Sagas', 'Bootstrap Grid Layout']
             }
         ],
         url: 'https://apicentral.axway.com/',
         videoId: 'E_dngD0PEI4'
     },
     {
-        title: 'AMPLIFY Central (Axway)',
-        summary: "Axway's premiere API Management PaaS solution for API management, security, and monitoring across on-premise, cloud-based, and hybrid API architectures.",
+        title: 'Ride The Teacups',
+        summary: 'A travel planning guide for parents who want to bring their young children to Disneyland.',
         responsibilities: [
             {
-                text: 'Design and implement the public API Catalog list',
-                tech: ['React', 'React-Router', 'Redux', 'Redux-Sagas', 'rSQL', 'Flexbox']
+                text: 'Design the project architecture and setup the primary tools',
+                tech: ['Express Server', 'MySQL & Sequelize', 'Express Helmet Security', 'Passport & bcrypt', 'React', 'React Helmet SEO', 'React-Router', 'Redux', 'Redux-Sagas']
             },
             {
                 text: 'Implement JWT authentication',
                 tech: ['JWT', 'Base64 Encryption', 'Redux', 'Redux-Sagas', 'Bootstrap Grid Layout']
             }
         ],
-        url: 'https://apicentral.axway.com/',
-        videoId: 'E_dngD0PEI4'
+        url: 'https://www.ridetheteacups.com/',
+        videoId: 'ncAJR28ARtc'
     }
 ];
