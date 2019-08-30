@@ -1,7 +1,7 @@
 import React from 'react';
 
 import StyleProvider from '../hooks/styleContext';
-import { PageHeader } from '../components';
+import { PageHeader, TwoColumns } from '../components';
 import { AvailableFeatures } from '../lib/constants';
 
 export const Projects = () => {
@@ -14,6 +14,10 @@ export const Projects = () => {
                 title="Projects"
                 slug="projects"
                 features={features}
+            />
+            <TwoColumns
+                left={<b>Left</b>}
+                right={<strong>Right</strong>}
             />
         </StyleProvider>
     );

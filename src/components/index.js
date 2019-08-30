@@ -10,6 +10,7 @@ import PageHeader from './PageHeader';
 import PlayList from './PlayList';
 import SocialMediaButton from './SocialMediaButton';
 import Text from './Text';
+import TwoColumns from './TwoColumns';
 import YouTube from './YouTube';
 import YouTubeImage from './YouTubeImage';
 
@@ -26,6 +27,7 @@ export {
     PlayList,
     SocialMediaButton,
     Text,
+    TwoColumns,
     YouTube,
     YouTubeImage
 };

@@ -744,6 +744,20 @@ input.op-input {
 }
 
 /**
+ *	TwoColumns
+ */
+.two-columns {
+	display: flex;
+}
+
+.two-columns .left-column,
+.two-columns .right-column {
+	flex: 0 0 50%;
+	display: flex;
+	justify-content: center;
+}
+
+/**
  *	YouTube
  */
 .youtube-image-container {
