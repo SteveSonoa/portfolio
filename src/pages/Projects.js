@@ -3,6 +3,7 @@ import React from 'react';
 import StyleProvider from '../hooks/styleContext';
 import { PageHeader, TwoColumns } from '../components';
 import { AvailableFeatures } from '../lib/constants';
+import { projects } from '../lib/helpers';
 
 export const Projects = () => {
     const { react, typescript, css, flex, hooks, md, redux, saga, router, api, express, seo, security, mysql, testing, enzyme, jest, mocha } = AvailableFeatures;
@@ -15,10 +16,7 @@ export const Projects = () => {
                 slug="projects"
                 features={features}
             />
-            <TwoColumns
-                left={<b>Left</b>}
-                right={<strong>Right</strong>}
-            />
+            {projects.map(p => <TwoColumns {...p} />)}
         </StyleProvider>
     );
 };

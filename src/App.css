@@ -748,6 +748,7 @@ input.op-input {
  */
 .two-columns {
 	display: flex;
+	margin-bottom: 10px;
 }
 
 .two-columns .left-column,
@@ -755,6 +756,7 @@ input.op-input {
 	flex: 0 0 50%;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 }
 
 /**

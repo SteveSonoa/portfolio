@@ -49,3 +49,38 @@ export const openLinkInNewTab = url => {
     const win = window.open(url, '_blank');
     win.focus();
 }
+
+export const projects = [
+    {
+        title: 'AMPLIFY Central (Axway)',
+        summary: "Axway's premiere API Management PaaS solution for API management, security, and monitoring across on-premise, cloud-based, and hybrid API architectures.",
+        responsibilities: [
+            {
+                text: 'Design and implement the public API Catalog list',
+                tech: ['React', 'React-Router', 'Redux', 'Redux-Sagas', 'rSQL', 'Flexbox']
+            },
+            {
+                text: 'Implement JWT authentication',
+                tech: ['JWT', 'Base64 Encryption', 'Redux', 'Redux-Sagas', 'Bootstrap Grid Layout']
+            }
+        ],
+        url: 'https://apicentral.axway.com/',
+        videoId: 'E_dngD0PEI4'
+    },
+    {
+        title: 'AMPLIFY Central (Axway)',
+        summary: "Axway's premiere API Management PaaS solution for API management, security, and monitoring across on-premise, cloud-based, and hybrid API architectures.",
+        responsibilities: [
+            {
+                text: 'Design and implement the public API Catalog list',
+                tech: ['React', 'React-Router', 'Redux', 'Redux-Sagas', 'rSQL', 'Flexbox']
+            },
+            {
+                text: 'Implement JWT authentication',
+                tech: ['JWT', 'Base64 Encryption', 'Redux', 'Redux-Sagas', 'Bootstrap Grid Layout']
+            }
+        ],
+        url: 'https://apicentral.axway.com/',
+        videoId: 'E_dngD0PEI4'
+    }
+];
