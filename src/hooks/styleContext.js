@@ -63,7 +63,7 @@ const DisplayStyle = () => {
 const HighlightContext = () => {
     const dispatch = useStyleDispatch();
     return (
-        <div className="highlight" onMouseEnter={() => dispatch({ type: 'toggle-highlight' })} onMouseLeave={() => dispatch({ type: 'toggle-highlight' })} style={{ cursor: 'pointer' }}>
+        <div className="showHighlight infoCursor" onMouseEnter={() => dispatch({ type: 'toggle-highlight' })} onMouseLeave={() => dispatch({ type: 'toggle-highlight' })}>
             <Text tag='p'>What is my context?</Text>
         </div>
     )
@@ -75,12 +75,12 @@ const StyleProvider = ({ children, className, footer }) => {
         <StyleStateContext.Provider value={state}>
             <StyleDispatchContext.Provider value={dispatch}>
                 <div className={`context-container ${footer && 'footer'}`}>
-                    <div className={`context-content ${className} ${state.style} ${state.showHighlight ? 'highlight' : ''}`} style={{padding: '10px 20px'}}>
+                    <div className={`context-content ${className} ${state.style} ${state.showHighlight ? 'highlight' : ''}`}>
                         {children}
                     </div>
                     <div className="context-controller-toggle pointer" onClick={() => dispatch({ type: 'toggle-controller' })}>{state.showController ? 'Hide' : 'Show'}<br />Context</div>
                     {state.showController && (
-                        <div className="context-controller side-padding-small">
+                        <div className={`context-controller side-padding-small ${footer && 'last'}`}>
                             <DisplayStyle />
                             <UpdateStyles />
                             <HighlightContext />

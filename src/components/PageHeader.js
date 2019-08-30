@@ -15,7 +15,7 @@ export const PageHeader = ({ features, location, slug, title }) => (
 			</>
 		) : (
 			<>
-				<Text tag={Tags.h2} className="no-margin">{title}</Text>
+				<Text tag={Tags.h2} className="no-style section-title">{title}</Text>
 				<Features availableFeatures={features} />
 				<LinkRenderer to='/'><Text tag={Tags.p}>{formatMessage('components.PageHeader.viewAllSections', 'English')}</Text></LinkRenderer>
 			</>

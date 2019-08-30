@@ -136,7 +136,7 @@ img {
 
 .page-content {
 	position: relative;
-	padding: 0 200px;
+	padding: 0;
 	width: 100vw;
 	height: 100vh;
 	overflow-y: scroll;
@@ -224,9 +224,14 @@ span.error::after {
 	cursor: pointer;
 }
 
+.infoCursor {
+	cursor: help;
+}
+
 /* CONTEXT */
 .context-content {
 	transition: 0.5s;
+	padding: 10px 200px;
 }
 
 .context-content.highlight {
@@ -235,27 +240,33 @@ span.error::after {
 
 .context-controller {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: calc(2.5em + 10px);
+	left: 10px;
 	background: #aaaaaa;
 	border: #ffffff solid 3px;
 	border-radius: 10px;
 	width: auto;
 	z-index: 5;
+	padding-top: 5px;
+	box-shadow: -5px -3px 10px rgba(0,0,0,0.5);
+}
+
+.context-controller.last {
+	top: calc(-3em - 10px);
+	box-shadow: -5px 3px 10px rgba(0,0,0,0.5);
 }
 
 .context-controller-toggle {
 	position: absolute;
-	top: 0;
+	top: 10px;
 	left: 0;
-	transform: translateX(-100%);
 	background: #ff0000;
 	width: auto;
 	padding: 10px;
 	transition: 0.25s;
 	text-align: center;
 	color: #3a3a3a;
-	border-radius: 10px 0 0 10px;
+	border-radius: 0 10px 10px 0;
 }
 
 .context-controller-toggle:hover {
@@ -323,6 +334,7 @@ span.error::after {
 	/* font-family: 'Darker Grotesque', sans-serif; */
 	/* font-family: 'Open Sans Condensed', sans-serif; */
 	font-size: 1.2em;
+	padding: 0 20%;
 
 }
 
@@ -563,7 +575,7 @@ input.op-input {
  *	PlayList
  */
 .page-header {
-	margin: 50px 0;
+	margin: 100px 0;
 	text-align: center;
 }
 
@@ -571,8 +583,8 @@ input.op-input {
 	font-size: 4em;
 	font-family: 'Gruppo', cursive;
 	text-transform: uppercase;
-	letter-spacing: 0.5em;
-	margin-right: -0.5em;
+	letter-spacing: 0.25em;
+	margin-right: -0.25em;
 }
 
 /**
