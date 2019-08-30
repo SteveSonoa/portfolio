@@ -44,3 +44,8 @@ export const multimediaVideoOptions = [
         ]
     }
 ];
+
+export const openLinkInNewTab = url => {
+    const win = window.open(url, '_blank');
+    win.focus();
+}

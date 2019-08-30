@@ -425,6 +425,7 @@ a.no-style:hover {
 	margin: 0;
 	background: rgba(0,0,0,0);
 	transition: background 0.5s;
+	text-align: center;
 }
 
 .menu.active {
@@ -492,6 +493,13 @@ a.no-style:hover {
 .page-content,
 .menu .menu-icon {
 	transition: 0.5s;
+}
+
+.menu .social-media-links {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
 }
 
 /**
@@ -662,44 +670,52 @@ input.op-input {
  *	SocialMediaButton
  */
 .social-media-button {
-	width: auto;
-	float: left;
 	display: flex;
-	padding: 10px 20px;
+	padding: 5px 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-media-button,
+.social-media-button .icon {
+	transition: 0.5s;
 }
 
 .social-media-button button.icon-button {
 	position: relative;
 }
 
-.social-media-button .fab {
+.social-media-button .icon {
 	padding: 5px;
-	border-radius: 50%;
-	transition: 0.5s;
-	transition-delay: 0.25s;
 }
 
-.social-media-button .fab,
-.social-media-button .name {
-	background: #aaaaaa;
+.social-media-button.github .icon {
+	color: #23292D;
 }
 
-.social-media-button.show-name .fab {
-	border-radius: 50% 0 0 50%;
-	transition: 0s;
-	transition-delay: 0s;
+.social-media-button.linkedin .icon {
+	color: #0073AF;
 }
 
-.social-media-button .name {
-	overflow: hidden;
-	width: 0;
-	border-radius: 0 50% 50% 0;
-	transition: 0.5s;
+.social-media-button.stackoverflow .icon {
+	color: #F48023;
 }
 
-.social-media-button.show-name .name {
-	width: 100%;
-	transition: 0.5s;
+.social-media-button.github:hover {
+	background: #23292D;
+}
+
+.social-media-button.linkedin:hover {
+	background: #0073AF;
+}
+
+.social-media-button.stackoverflow:hover {
+	background: #F48023;
+}
+
+.social-media-button:hover,
+.social-media-button:hover .icon {
+	color: #ffffff;
 }
 
 /**

@@ -12,14 +12,6 @@ export const Menu = ({ disableMenu, enableMenu, menu, giphy, fetchGiphyImages })
 		<div className="menu-content">
 			<Text tag='h2'>FullStackSteve.com</Text>
 			<Text tag='h3' className="name">Steve Marshall <i className="fas fa-code-branch" /> Web Developer</Text>
-			<ul>
-				<li>CSS Layouts</li>
-				<li>Testing Frameworks</li>
-				<li>Games</li>
-				<li>Production Examples</li>
-				<li>Resume (PDF)</li>
-			</ul>
-			<button onClick={() => fetchGiphyImages('superman')}>Get Giphy Images</button> {giphy.loading ? <span className='loading'><i class="fas fa-sync-alt fa-spin" /></span> : giphy.success ? <span className='success' /> : giphy.error ? <span className='error' /> : null}
 			<DropdownContainer
 				title='THIS IS THE TITLE'
 				options={[
@@ -30,7 +22,18 @@ export const Menu = ({ disableMenu, enableMenu, menu, giphy, fetchGiphyImages })
 				]}
 				action={fetchGiphyImages}
 			/>
-			<SocialMediaButton site='github' />
+			<ul>
+				<li>CSS Layouts</li>
+				<li>Testing Frameworks</li>
+				<li>Games</li>
+				<li>Production Examples</li>
+				<li>Resume (PDF)</li>
+			</ul>
+			<div className='social-media-links'>
+				<SocialMediaButton site='github' />
+				<SocialMediaButton site='stackoverflow' />
+				<SocialMediaButton site='linkedin' />
+			</div>
 		</div>
 	</div>
 );

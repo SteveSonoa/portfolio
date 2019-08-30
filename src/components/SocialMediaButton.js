@@ -1,19 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { LinkRenderer, Text } from '.';
+import { withRouter } from 'react-router-dom';
+
+import { Button } from './';
+import { openLinkInNewTab } from '../lib/helpers';
 
 export const SocialMediaButton = ({ site }) => {
-    const [isNameDisplayed, setIsNameDisplayed] = useState(false);
+    let icon, link, text;
+    switch (site) {
+        case 'github':
+            icon = 'fab fa-github';
+            link = 'https://github.com/stevesonoa';
+            text = 'GitHub';
+            break;
+        case 'stackoverflow':
+            icon = 'fab fa-stack-overflow';
+            link = 'https://stackoverflow.com/users/8578075/steve';
+            text = 'Stack Overflow';
+            break;
+        case 'linkedin':
+            icon = 'fab fa-linkedin-in';
+            link = 'https://www.linkedin.com/in/sonoa/';
+            text = 'LinkedIn';
+            break;
+        default:
+            icon = 'fas fa-home';
+            link = 'http://www.fullstacksteve.com/';
+            text = 'FullStackSteve';
+    }
 
     return (
-        <div className={`social-media-button pointer ${isNameDisplayed ? 'show-name' : ''}`} onMouseEnter={() => setIsNameDisplayed(true)} onMouseLeave={() => setIsNameDisplayed(false)}>
-            <i className="fab fa-github" />
-            <div className="name">GITHUB</div>
-
-
-            {/* <button className="icon-button"><i className="fab fa-github" /></button> */}
-            {/* <div className={`name-button ${isNameDisplayed ? 'show-name' : ''}`}>It'll be fun...</div> */}
-        </div>
+        <Button className={`social-media-button ${site}`} onClick={() => openLinkInNewTab(link)}>
+            <i className={`icon ${icon}`} />
+            <div className="name">{text}</div>
+        </Button>
     );
 };
 
@@ -21,4 +41,4 @@ SocialMediaButton.propTypes = {
     site: PropTypes.oneOf(['github', 'stackoverflow', 'linkedin']).isRequired
 };
 
-export default SocialMediaButton;
+export default withRouter(SocialMediaButton);
