@@ -5,6 +5,7 @@ import Image from './Image';
 import LinkRenderer from './LinkRenderer';
 import Menu from './Menu';
 import Modal from './Modal';
+import Navbar from './Navbar';
 import OptionPanel from './OptionPanel';
 import PageHeader from './PageHeader';
 import PlayList from './PlayList';
@@ -22,6 +23,7 @@ export {
     LinkRenderer,
     Menu,
     Modal,
+    Navbar,
     OptionPanel,
     PageHeader,
     PlayList,

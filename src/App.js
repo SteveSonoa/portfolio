@@ -6,6 +6,7 @@ import {
 	Image,
 	LinkRenderer,
 	Menu,
+	Navbar,
 	// Modal,
 	// PageHeader,
 	Text,
@@ -25,6 +26,7 @@ const App = () => (
 				<Image src={logo} className="App-logo" alt="logo" title="Cool" text="This is super cool!" />
 				<div className="stripe" />
 			</div>
+			<Navbar />
 			<div className={`page-content`}>
 				<StyleProvider className="header">
 					<Text tag='h1'>Steve's Portfolio</Text>

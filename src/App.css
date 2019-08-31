@@ -193,6 +193,10 @@ dl dd {
 	border-radius: 5px;
 }
 
+.flex-start {
+	justify-self: flex-start;
+}
+
 /**
  *	ANIMATION
  */
@@ -281,7 +285,7 @@ span.error::after {
 	border-radius: 10px;
 	width: auto;
 	z-index: 5;
-	padding-top: 5px;
+	padding: 5px;
 	box-shadow: -5px -3px 10px rgba(0,0,0,0.5);
 }
 
@@ -299,11 +303,12 @@ span.error::after {
 	padding: 10px;
 	transition: 0.25s;
 	text-align: center;
-	color: #3a3a3a;
+	color: #e6e6e6;
 	border-radius: 0 10px 10px 0;
 }
 
-.context-controller-toggle:hover {
+.context-controller-toggle:hover,
+.context-controller-toggle.active {
 	background: #ff6666;
 	color: #fff;
 }
@@ -391,8 +396,6 @@ span.error::after {
 
 .image-container img {
 	position: relative;
-	height: 100%;
-	width: 100%;
 }
 
 .image-container .image-text {
@@ -554,6 +557,51 @@ a.no-style:hover {
 }
 
 /**
+ *	Navbar
+ */
+.navbar {
+	width: 100vw;
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 25px;
+	justify-content: space-between;
+	align-items: center;
+	background: #fff;
+	z-index: 5;
+}
+
+.navbar .info,
+.navbar .selector,
+.navbar .menu-items {
+	flex: 1 1 33%;
+}
+
+.navbar .menu-items {
+	display: flex;
+	flex-direction: column;
+}
+
+.navbar .top,
+.navbar .bottom {
+	display: flex;
+	justify-content: flex-end;
+	margin: 5px 0;
+}
+
+.navbar .top ul {
+	display: flex;
+}
+
+.navbar .top ul li {
+	margin: 0 25px;
+	white-space: nowrap;
+}
+
+.navbar .bottom .social-media-button {
+	margin-left: 10px;
+}
+
+/**
  *	OptionPanel
  */
 .op-container {
@@ -564,8 +612,9 @@ a.no-style:hover {
     color: #666666;
     font-size: .8em;
 	box-shadow: 1px 2px 10px #0000001f;
-	position: relative;
-	top: -1px;
+	position: absolute;
+	top: 3em;
+	width: unset;
 }
 
 ul.op-ul {

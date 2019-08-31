@@ -21,12 +21,6 @@ function styleReducer(state, action) {
                 style: Styles.light
             }
         }
-        case 'toggle-highlight': {
-            return {
-                ...state,
-                showHighlight: !state.showHighlight
-            }
-        }
         case 'toggle-controller': {
             return {
                 ...state,
@@ -60,30 +54,20 @@ const DisplayStyle = () => {
     return <div>{`The current style is ${style}`}</div>
 }
 
-const HighlightContext = () => {
-    const dispatch = useStyleDispatch();
-    return (
-        <div className="showHighlight infoCursor" onMouseEnter={() => dispatch({ type: 'toggle-highlight' })} onMouseLeave={() => dispatch({ type: 'toggle-highlight' })}>
-            <Text tag='p'>What is my context?</Text>
-        </div>
-    )
-}
-
 const StyleProvider = ({ children, className, footer }) => {
-    const [state, dispatch] = useReducer(styleReducer, { style: Styles.light, showHighlight: false, showToggle: false })
+    const [state, dispatch] = useReducer(styleReducer, { style: Styles.light, showToggle: false })
     return (
         <StyleStateContext.Provider value={state}>
             <StyleDispatchContext.Provider value={dispatch}>
                 <div className={`context-container ${footer && 'footer'}`}>
-                    <div className={`context-content ${className} ${state.style} ${state.showHighlight ? 'highlight' : ''}`}>
+                    <div className={`context-content ${className} ${state.style} ${state.showController ? 'highlight' : ''}`}>
                         {children}
                     </div>
-                    <div className="context-controller-toggle pointer" onClick={() => dispatch({ type: 'toggle-controller' })}>{state.showController ? 'Hide' : 'Show'}<br />Context</div>
+                    <div className={`context-controller-toggle pointer ${state.showController ? 'active' : ''}`} onClick={() => dispatch({ type: 'toggle-controller' })}>{state.showController ? 'Hide' : 'Show'}<br />Context</div>
                     {state.showController && (
                         <div className={`context-controller side-padding-small ${footer && 'last'}`}>
                             <DisplayStyle />
                             <UpdateStyles />
-                            <HighlightContext />
                         </div>
                     )}
                 </div>
