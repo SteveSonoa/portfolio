@@ -56,12 +56,12 @@ export const projects = [
         summary: "Axway's premiere API Management PaaS solution for API management, security, and monitoring across on-premise, cloud-based, and hybrid API architectures.",
         responsibilities: [
             {
-                text: 'Design and implement the public API Catalog list',
-                tech: ['React', 'React-Router', 'Redux', 'Redux-Sagas', 'rSQL', 'Flexbox']
+                text: 'Design and implement a public API Catalog list',
+                tech: ['Swagger', 'Promises & Data Management', 'UX', 'React & React-Router', 'Flexbox']
             },
             {
-                text: 'Implement JWT authentication',
-                tech: ['JWT', 'Base64 Encryption', 'React Hooks', 'Redux', 'Redux-Sagas', 'Bootstrap Grid Layout']
+                text: 'Implement client-side JWT authentication',
+                tech: ['JWT', 'Base64 Encryption', 'Full CRUD Implementation', 'React & Hooks', 'Redux & Redux-Sagas', 'Bootstrap Grid Layout']
             }
         ],
         url: 'https://apicentral.axway.com/',
@@ -73,11 +73,15 @@ export const projects = [
         responsibilities: [
             {
                 text: 'Design the project architecture and setup the primary tools',
-                tech: ['Express Server', 'MySQL & Sequelize', 'Express Helmet Security', 'Passport & bcrypt', 'React', 'React Helmet SEO', 'React-Router', 'Redux', 'Redux-Sagas']
+                tech: ['Express Server', 'MySQL & Sequelize', 'Express Helmet Security', 'Passport & bcrypt', 'React Helmet SEO', 'React & React-Router', 'Redux & Redux-Sagas', 'Axios']
             },
             {
-                text: 'Implement JWT authentication',
-                tech: ['JWT', 'Base64 Encryption', 'Redux', 'Redux-Sagas', 'Bootstrap Grid Layout']
+                text: 'Handle server-side JWT authentication',
+                tech: ['JWT', 'Passport & bcrypt', 'httpsOnly Cookie Management']
+            },
+            {
+                text: 'Create a complete blog platform without using a library',
+                tech: ['Full CRUD Implementation', 'UX', 'API-based Pagination', 'Flexbox (for posts)', 'CSS Grid (for lists)', 'User Authentication', 'Permissions Management']
             }
         ],
         url: 'https://www.ridetheteacups.com/',

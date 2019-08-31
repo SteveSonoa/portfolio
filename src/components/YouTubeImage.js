@@ -7,13 +7,13 @@ export const YouTubeImage = ({ className, id, handleClickImage, overlay }) => {
             <img
                 src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`}
                 alt="YouTube Video"
-                className="youtube-image"
+                className="youtube-image pointer"
             />
             {overlay && (
                 <img
-                    src="/img/youtube-video-overlay.jpg"
+                    src="/img/youtube-video-overlay.png"
                     alt="YouTube Video"
-                    className="youtube-cover-image"
+                    className="youtube-cover-image pointer"
                     onClick={handleClickImage}
                 />
             )}
