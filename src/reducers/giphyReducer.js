@@ -3,6 +3,8 @@ export const FETCH_GIPHY_IMAGES = 'FETCH_GIPHY_IMAGES';
 export const FETCH_GIPHY_IMAGES_SUCCESS = 'FETCH_GIPHY_IMAGES_SUCCESS';
 export const FETCH_GIPHY_IMAGES_ERROR = 'FETCH_GIPHY_IMAGES_ERROR';
 
+export const RESET_GIPHY_STATUS = 'RESET_GIPHY_STATUS';
+
 export const initialState = {
     data: [],
 	error: false,
@@ -15,6 +17,10 @@ export const initialState = {
 export const fetchGiphyImages = (arr) => ({
     type: FETCH_GIPHY_IMAGES,
     searchTerms: arr.map(item => item.value).join(' ')
+});
+
+export const resetGiphyStatus = () => ({
+    type: RESET_GIPHY_STATUS
 });
 
 // Reducers
@@ -41,6 +47,13 @@ export const reduceSuccess = (state, data) => ({
     success: true
 });
 
+export const reduceResetStatus = state => ({
+    ...state,
+    error: false,
+    loading: false,
+    success: false
+})
+
 export default function(state = initialState, action) {
 	switch (action.type) {
 		case FETCH_GIPHY_IMAGES:
@@ -49,7 +62,9 @@ export default function(state = initialState, action) {
 			return reduceError(state, action);
 		case FETCH_GIPHY_IMAGES_SUCCESS:
 			return reduceSuccess(state, action.payload);
-		default:
+        case RESET_GIPHY_STATUS:
+            return reduceResetStatus(state);
+        default:
 			return state;
 	}
 }

@@ -2,7 +2,9 @@ export const PageTitles = {
     games: 'Games',
     multimedia: 'Multimedia',
     projects: 'Projects',
-    testing: 'Testing'
+    testing: 'Testing',
+    technology: 'Technology',
+    root: '/'
 };
 
 export const Tags = {
@@ -30,6 +32,7 @@ export const AvailableFeatures = {
     router: 'React Router',
     timer: 'Timers',
     md: 'Markdown',
+    axios: 'Axios',
     adobe: {
         premiere: 'Adobe Premiere',
         ps: 'Adobe Photoshop',

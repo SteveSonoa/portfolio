@@ -88,3 +88,19 @@ export const projects = [
         videoId: 'ncAJR28ARtc'
     }
 ];
+
+export const dropdownOptions = [
+    { name: "80's Cartoons", value: 'gijoe transformers voltron thundercats tmnt' },
+    { name: 'BBC Favorites', value: 'topgear downtonabbey fatherted doctorwho mrbean' },
+    { name: 'Cats', value: 'cat kitten lion' },
+    { name: 'Disney', value: 'disney disneyland mickey pluto donald ducktales' },
+    { name: 'Dogs', value: 'dogs' },
+    { name: 'Game Shows', value: 'jeopardy wheeloffortune pressyourluck matchgame' },
+    { name: 'Comic Books', value: 'marvel mcu ironman hulk batman superman wonderwoman' },
+    { name: 'Memes', value: 'meme memes' },
+    { name: 'Politics', value: 'politics trump pelosi clinton obama biden' },
+    { name: 'Reality TV', value: 'bigbrother bachelor survivor amazingrace' },
+    { name: 'Rock Bands', value: 'metallica pearljam blacksabbath korn' },
+    { name: 'Sports', value: 'baseball basketball wrestling football rugby' },
+    { name: 'Star Wars', value: 'starwars yoda darth kenobi xwing' }
+];

@@ -327,6 +327,7 @@ span.error::after {
 .ddwtContainer {
 	max-width: 90%;
 	position: relative;
+	margin-left: 10px;
 }
 
 .ddwtContainer .ddwtButton {
@@ -467,6 +468,21 @@ a.no-style:hover {
 }
 
 /**
+ *	LoadingStatus
+ */
+.loading-status {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loading-status .loading-icon,
+.loading-message .loading-message {
+	margin: 25px;
+	font-size: 3em;
+}
+
+/**
  *	Menu
  */
 .menu {
@@ -574,6 +590,11 @@ a.no-style:hover {
 .navbar .selector,
 .navbar .menu-items {
 	flex: 1 1 33%;
+}
+
+.navbar .selector {
+	display: flex;
+	align-items: center;
 }
 
 .navbar .menu-items {
@@ -947,4 +968,21 @@ input.op-input {
 
 .game-layout .game-description {
 	padding: 0 10px;
+}
+
+/* PAGES */
+
+/**
+ *	TECHNOLOGY
+ */
+.technology-images {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: space-evenly;
+}
+
+.technology-images .image-container {
+	width: 22%;
+	margin-bottom: 25px;
 }

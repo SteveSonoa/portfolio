@@ -2,7 +2,6 @@ import React, { createContext, useContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
 
 import { Styles } from '../lib/constants';
-import { Text } from '../components';
 
 const StyleStateContext = createContext();
 const StyleDispatchContext = createContext();

@@ -3,6 +3,7 @@ import DropdownContainer from './DropdownContainer';
 import Features from './Features';
 import Image from './Image';
 import LinkRenderer from './LinkRenderer';
+import LoadingStatus from './LoadingStatus';
 import Menu from './Menu';
 import Modal from './Modal';
 import Navbar from './Navbar';
@@ -21,6 +22,7 @@ export {
     Features,
     Image,
     LinkRenderer,
+    LoadingStatus,
     Menu,
     Modal,
     Navbar,
